@@ -1,0 +1,26 @@
+{
+  "Card-Flip": [
+      {
+        "imageSet":
+        [
+          "course/Library/images/farm_animals/cow.png",
+          "course/Library/images/farm_animals/rabbit.png",
+          "course/Library/images/farm_animals/dog.png",
+          "course/Library/images/farm_animals/cat.png",
+          "course/Library/images/farm_animals/camel.png",
+          "course/Library/images/farm_animals/sheep.png"
+        ]
+      },
+      {
+        "imageSet":
+        [
+          "course/Library/images/study_material/pen.png",
+          "course/Library/images/study_material/pencil.png",
+          "course/Library/images/study_material/book.png",
+          "course/Library/images/study_material/eraser.png",
+          "course/Library/images/study_material/sharpner.png",
+          "course/Library/images/study_material/notebook.png"
+        ]
+      }
+  ]
+}
