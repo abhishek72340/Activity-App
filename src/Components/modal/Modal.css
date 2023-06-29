@@ -1,0 +1,33 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal {
+    max-width: 30rem;
+    width: 100%;
+    height: 15rem;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  .cross {
+    border-radius: 50%;
+    border: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #ebebeb;
+    cursor: pointer;
+  }

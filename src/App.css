@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color:#1e292e;
+
+display: flex;
+justify-content: center;
+
+}
+#container{
+  width: 80vw;
+  height: 500px;  
+     background:url('https://www.mentalup.co/samples/img/game-v2/game24/background.png') 
+     no-repeat center center fixed;
+     background-size: 100% 100%;
+
+}
+#box-grid {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+margin: 10rem auto;
+}
