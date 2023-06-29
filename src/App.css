@@ -4,25 +4,39 @@
     box-sizing: border-box;
 
 }
-body{
-    background-color:#1e292e;
 
-display: flex;
-justify-content: center;
-
+body {
+    background-color: #1e292e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+height: 100vh;
 }
-#container{
-  width: 80vw;
-  height: 500px;  
-     background:url('https://www.mentalup.co/samples/img/game-v2/game24/background.png') 
-     no-repeat center center fixed;
-     background-size: 100% 100%;
 
+#container {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('https://www.mentalup.co/samples/img/game-v2/game24/background.png') no-repeat center center fixed;
+    background-size: 100% 100%;
+    width: 80vw;
+    height: 530px;
 }
+
 #box-grid {
-    width: 300px;
-    display: grid;
+    width: 30vw;
+        display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-margin: 10rem auto;
+    
+}
+
+#count-three-second {
+      font-size: 5rem;
+    font-weight: bold;
+}
+#nav{
+    display: flex;
+      justify-content: space-around;
 }

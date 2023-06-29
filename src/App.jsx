@@ -1,175 +1,50 @@
-import React, { useState, useEffect } from 'react'
 import './App.css';
-import data from '../database/Card-Flip.json'
 import SingleCard from './Components/singleCard/SingleCard';
 import { FaPause } from 'react-icons/fa';
 import Modal from './Components/modal/Modal'
+import useFunction from './useFunction';
 
 export default function App() {
-  const [index, setIndex] = useState(0);
-  const [cards, setCards] = useState([]);
-  const [firstChoice, setFirstChoice] = useState(null);
-  const [secondChoice, setSecondChoice] = useState(null);
-  const [gameStart, setGameStart] = useState(true);
-  const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(90);
+  const { handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
+    gameStart, setGameStart, score, timer, modalIsOpen, count, clickCount } = useFunction();
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [gameEnd, setGameEnd] = useState(false);
-  const [count, setCount] = useState(3);
-
-
-
-
-
-  const [clickCount, setClickCount] = useState(0);
-
-  useEffect(() => {
-    if (clickCount === 6) {
-      setGameEnd(true)
-      setIndex(index + 1)
-    }
-  }, [clickCount]);
-
-
-
-  const images = data['Card-Flip'][index].imageSet
-
-  const shuffleCards = () => {
-    const shuffledCards = [...images, ...images]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }))
-
-    setCards(shuffledCards)
-
-  };
-
-  useEffect(() => {
-
-    if (!gameStart) {
-      const time = setInterval(() => {
-        setTimer(prev => prev - 1)
-
-      }, 1000)
-      return () => clearInterval(time);
-    }
-
-  }, [gameStart]);
-
-  useEffect(() => {
-    if (timer === 0) {
-      window.location.reload();
-    }
-  }, [timer])
-
-  useEffect(() => {
-    shuffleCards(images)
-    setTimeout(() => {
-      setGameStart(false)
-    }, 5000)
-
-  }, []);
-
-  const handleChoice = (card) => {
-    firstChoice ? setSecondChoice(card) : setFirstChoice(card)
-
-  };
-  useEffect(() => {
-    if (clickCount === 6) {
-      shuffleCards()
-      setGameStart(true)
-    }
-  }, [clickCount === 6 && clickCount,gameEnd]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setGameStart(false)
-    }, 5000)
-  }, [gameEnd])
-
-
-  useEffect(() => {
-
-    if (firstChoice && secondChoice) {
-
-      if (firstChoice.src === secondChoice.src) {
-        setClickCount(clickCount + 1)
-        setScore(prev => prev + 5)
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if (card.src === firstChoice.src) {
-              return { ...card, matched: true }
-            } else {
-              return card
-            }
-          })
-        })
-        resetTurn()
-      } else {
-        setTimeout(() => {
-
-          resetTurn()
-        }, 700)
-      }
-    }
-
-
-  }, [firstChoice, secondChoice]);
-  const resetTurn = () => {
-    setFirstChoice(null)
-    setSecondChoice(null);
-
-  };
-
-
-
-  const openModalHandler = () => {
-    setModalIsOpen(true);
-  };
-  const closeModalHandler = () => {
-    setModalIsOpen(false);
-  };
-
-  const refreshWindow = () => window.location.reload(true);
-
-
-
-  const heading = gameStart ? 'Remember the cards' : 'Match pairs';
-
-  useEffect(()=>{
-   const countingTime= setInterval(()=>{
-      setCount(prev=>prev-1)
-    },1000)
-    return () => clearInterval(countingTime);
-  },[])
   return (
     <>
-<div id='container'>
-      <div id='app'>
-        <button onClick={openModalHandler}> <FaPause /></button>
-        <span>Score={score};</span>
-        <span>Timer={timer}</span>
-        <h1>{heading}</h1>
-     
-        {
-          count>0?   <h2>{count}</h2>:
-       
-        <div id='box-grid'>
+      <div id='container'>
+        {/* <div id='app'> */}
+        <div id='nav'>
+          <span><FaPause onClick={openModalHandler} /></span>
 
+          <h1>{heading}</h1>
+
+          <div>
+            <span>Score={score}</span>
+            <span>Timer={timer}</span>
+          </div>
+
+        </div>
+        <div>
           {
-            cards.map((card) => {
-              return (
-                <div key={card.id}>
-                  <SingleCard card={card} handleChoice={handleChoice}
-                    flipped={card === firstChoice || card === secondChoice || card.matched}
-                    gameStart={gameStart} setGameStart={setGameStart}
-                  />
-                </div>
-              )
-            })
+            count > 0 ? <h2 id='count-three-second'>{count}</h2> :
+
+              <div id='box-grid'>
+
+                {
+                  cards.map((card) => {
+                    return (
+                      <div key={card.id}>
+                        <SingleCard card={card} handleChoice={handleChoice}
+                          flipped={card === firstChoice || card === secondChoice || card.matched}
+                          gameStart={gameStart} setGameStart={setGameStart}
+                        />
+                      </div>
+                    )
+                  })
+                }
+              </div>
           }
         </div>
- }
+
       </div>
 
       {modalIsOpen && (
@@ -181,7 +56,7 @@ export default function App() {
           <button onClick={refreshWindow}>refresh</button>
         </Modal>
       )}
-      </div>
+      {/* </div> */}
     </>
   )
 }

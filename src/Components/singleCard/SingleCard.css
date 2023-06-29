@@ -1,6 +1,6 @@
 .card {
     position: relative;
- 
+
 }
 
 .card img {
@@ -23,9 +23,10 @@
 
 .flipped .front {
     transform: rotateY(0deg);
-  
-} 
+
+}
+
 .flipped .back {
     visibility: hidden;
-  
-} 
+
+}
