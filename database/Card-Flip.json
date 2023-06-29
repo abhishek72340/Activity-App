@@ -3,27 +3,27 @@
     {
       "imageSet": [
         {
-          "src": "./course/Library/images/farm_animals/cow.png",
+          "src": "course/library/images/farmanimals/cow.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/farm_animals/rabbit.png",
+          "src": "course/library/images/farmanimals/rabbit.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/farm_animals/dog.png",
+          "src": "course/library/images/farmanimals/dog.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/farm_animals/cat.png",
+          "src": "course/library/images/farmanimals/cat.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/farm_animals/camel.png",
+          "src": "course/library/images/farmanimals/camel.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/farm_animals/sheep.png",
+          "src": "course/library/images/farmanimals/sheep.png",
           "matched": false
         }
       ]
@@ -31,27 +31,27 @@
     {
       "imageSet": [
         {
-          "src": "./course/Library/images/study_materials/pen.jpg",
+          "src": "course/library/images/studymaterials/pen.jpg",
           "matched": false
         },
         {
-          "src": "./course/Library/images/study_materials/pencil.jpg",
+          "src": "course/library/images/studymaterials/pencil.jpg",
           "matched": false
         },
         {
-          "src": "./course/Library/images/study_materials/book.jpeg",
+          "src": "course/library/images/studymaterials/book.jpeg",
           "matched": false
         },
         {
-          "src": "./course/Library/images/study_materials/eraser.png",
+          "src": "course/library/images/studymaterials/eraser.png",
           "matched": false
         },
         {
-          "src": "./course/Library/images/study_materials/sharpner.jpg",
+          "src": "course/library/images/studymaterials/sharpner.jpg",
           "matched": false
         },
         {
-          "src": "./course/Library/images/study_materials/notebook.jpg",
+          "src": "course/library/images/studymaterials/notebook.jpg",
           "matched": false
         }
       ]
