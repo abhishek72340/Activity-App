@@ -33,7 +33,6 @@ export default function App() {
 
 
 
-  // const images =clickCount===6? data['Card-Flip'][1].imageSet: data['Card-Flip'][0].imageSet
   const images = data['Card-Flip'][index].imageSet
 
   const shuffleCards = () => {
