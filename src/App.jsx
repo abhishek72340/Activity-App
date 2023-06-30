@@ -7,12 +7,12 @@ import refresh from '../src/screenshot/refresh.png';
 import play from '../src/screenshot/play.png';
 
 export default function App() {
-  const {isLoading, pauseTimer, resumeTimer, handleChoice, refreshWindow, timer, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
+  const { isLoading, pauseTimer, resumeTimer, handleChoice, refreshWindow, timer, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
     gameStart, setGameStart, score, modalIsOpen, count, clickCount } = useFunction();
 
-    if(isLoading){
-      return <h2 id='loader'>LOADING.....</h2>
-    }
+  if (isLoading) {
+    return <h2 id='loader'>LOADING.....</h2>
+  }
 
   return (
     <>
@@ -25,29 +25,29 @@ export default function App() {
             <span>Timer: {timer}</span>
           </div>
         </nav>
-      
+
         <div id='grid-heading-container'>
           <h1 id='heading'>{heading}</h1>
           <div>
-          {
-            count > 0 ? <h2 id='count-three-second'>{count}</h2> :
+            {
+              count > 0 ? <h2 id='count-three-second'>{count}</h2> :
 
-              <div id='box-grid'>
+                <div id='box-grid'>
 
-                {
-                  cards.map((card) => {
-                    return (
-                      <div key={card.id}>
-                        <SingleCard card={card} handleChoice={handleChoice}
-                          flipped={card === firstChoice || card === secondChoice || card.matched}
-                          gameStart={gameStart} setGameStart={setGameStart}
-                        />
-                      </div>
-                    )
-                  })
-                }
-              </div>
-          }
+                  {
+                    cards.map((card) => {
+                      return (
+                        <div key={card.id}>
+                          <SingleCard card={card} handleChoice={handleChoice}
+                            flipped={card === firstChoice || card === secondChoice || card.matched}
+                            gameStart={gameStart} setGameStart={setGameStart}
+                          />
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+            }
           </div>
         </div>
 
