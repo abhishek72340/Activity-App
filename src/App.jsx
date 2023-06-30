@@ -8,9 +8,12 @@ import refresh from '../src/screenshot/refresh.png';
 import play from '../src/screenshot/play.png';
 
 export default function App() {
-  const { pauseTimer, resumeTimer, handleChoice, refreshWindow, timer, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
+  const {isLoading, pauseTimer, resumeTimer, handleChoice, refreshWindow, timer, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
     gameStart, setGameStart, score, modalIsOpen, count, clickCount } = useFunction();
 
+    if(isLoading){
+      return <h2 id='loader'>LOADING.....</h2>
+    }
 
   return (
     <>

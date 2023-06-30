@@ -10,9 +10,11 @@ export default function useFunction() {
     const [timer, setTimer] = useState(90);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [gameEnd, setGameEnd] = useState(false);
-    const [count, setCount] = useState(3);
+    const [count, setCount] = useState(5);
     const [clickCount, setClickCount] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+    const [isPaused, setIsPaused] = useState(false); 
+    const [isLoading, setIsLoading] = useState(true); 
+    
 
 
 
@@ -47,7 +49,7 @@ export default function useFunction() {
 
 
 
-    //restart the game by over the time
+    //restart the game when time over
     useEffect(() => {
         if (timer === 0 ) {
             window.location.reload();
@@ -55,12 +57,12 @@ export default function useFunction() {
     }, [timer]);
 
 
-    //quiz start after 5 sec
+    //quiz start after 8 sec
     useEffect(() => {
         shuffleCards(images)
         setTimeout(() => {
             setGameStart(false)
-        }, 8000)
+        }, 10000)
     }, []);
 
 
@@ -86,7 +88,7 @@ export default function useFunction() {
     useEffect(() => {
         setTimeout(() => {
             setGameStart(false)
-        }, 8000)
+        }, 10000)
     }, [gameEnd])
 
 
@@ -138,9 +140,15 @@ export default function useFunction() {
         return () => clearInterval(countingTime);
     }, [])
 
+    //loading
+    useEffect(()=>{
+        setTimeout(()=>{
+            setIsLoading(false)
+        },2000)
+    },[])
 
     return {
-        pauseTimer, resumeTimer, shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
+       isLoading, pauseTimer, resumeTimer, shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
         , modalIsOpen, setModalIsOpen, gameEnd, setGameEnd, count, setCount, clickCount, setClickCount
     }
 }

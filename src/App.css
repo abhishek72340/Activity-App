@@ -121,6 +121,13 @@ nav {
     background-color: orange;
 }
 
+#loader{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: sans-serif;
+
+}
 @media only screen and (max-width:1024px) {
     #container {
         width: 100vw;
