@@ -16,8 +16,6 @@ export default function useFunction() {
     const [isLoading, setIsLoading] = useState(true);
 
 
-
-
     const handleChoice = (card) => {
         firstChoice ? setSecondChoice(card) : setFirstChoice(card)
     };

@@ -20,7 +20,7 @@ body {
     position: relative;
     align-items: center;
     flex-direction: column;
-    background: url('https://www.mentalup.co/samples/img/game-v2/game24/background.png') no-repeat center center fixed;
+    background: url('./screenshot/background.png') no-repeat center center fixed;
     background-size: 100% 100%;
     width: 80vw;
     height: 87vh;
