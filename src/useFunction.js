@@ -49,7 +49,7 @@ export default function useFunction() {
 
     //restart the game by over the time
     useEffect(() => {
-        if (timer === 0) {
+        if (timer === 0 ) {
             window.location.reload();
         }
     }, [timer]);

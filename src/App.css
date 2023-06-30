@@ -17,12 +17,13 @@ body {
 #container {
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
     flex-direction: column;
     background: url('https://www.mentalup.co/samples/img/game-v2/game24/background.png') no-repeat center center fixed;
     background-size: 100% 100%;
     width: 80vw;
-    height: 530px;
+    height: 87vh;
 }
 
 #box-grid {
@@ -47,9 +48,13 @@ body {
 #heading {
     font-size: 1.7rem;
     font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-
+     font-family: sans-serif;
+     text-align: center;
+    }
+#grid-heading-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 nav {
@@ -59,14 +64,14 @@ nav {
     align-items: center;
     width: 80vw;
     position: absolute;
-    top: 5%;
+    top: 1%;
     color: #441306;
 }
 
 #score-timer {
     display: flex;
-    gap: 2rem;
-    font-size: 5vmin;
+    gap: 4vmin;
+    font-size: 4vmin;
     font-weight: bold;
 }
 
@@ -81,45 +86,51 @@ nav {
 }
 
 #modal-memory-card {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: sans-serif;
 }
 
 #modal-container p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: sans-serif;
+    text-align: center;
+    opacity: 0.9;
 
 }
 
 #modal-button {
     display: flex;
     gap: 1rem;
-    margin-top: -1rem;
-
 }
 
-#play-button {
-    width: 4rem;
-    height: 4rem;
-    background-color: greenyellow;
-    border: 1px solid greenyellow;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
+#play-button,
 #refresh-button {
     width: 4rem;
     height: 4rem;
-    background-color: orange;
-    border: 1px solid orange;
-    border-radius: 10px;
+    border: 3px solid white;
+    border-radius: 20px;
     cursor: pointer;
+}
+
+#play-button {
+    background-color: greenyellow;
+}
+
+#refresh-button {
+    background-color: orange;
 }
 
 @media only screen and (max-width:1024px) {
     #container {
         width: 100vw;
+        height: 100vh;
 
+    }
+}
+
+@media (max-width:320px) {
+    #modal-button {
+        margin-top: -2.5rem;
     }
 }
