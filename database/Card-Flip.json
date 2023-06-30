@@ -3,15 +3,15 @@
     {
       "imageSet": [
         {
-          "src": "./course/library/images/farm_animals/cow.png",
+          "src": "course/library/images/farm_animals/cow.png",
           "matched": false
         },
         {
-          "src": "/course/library/images/farm_animals/rabbit.png",
+          "src": "course/library/images/farm_animals/rabbit.png",
           "matched": false
         },
         {
-          "src": "../course/library/images/farm_animals/dog.png",
+          "src": "course/library/images/farm_animals/dog.png",
           "matched": false
         },
         {
@@ -19,7 +19,7 @@
           "matched": false
         },
         {
-          "src": "course/library/images/farm_animals/camel.png",
+          "src": "/camel.png",
           "matched": false
         },
         {
