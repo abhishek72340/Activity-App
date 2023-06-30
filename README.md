@@ -11,4 +11,15 @@ This is a simple quiz app designed to stimulate and enhance the mental abilities
 6: Responsive design for different screen sizes
 
 <h2>Technology Used</h2>
-1: React.Js [with useEffect hooks, useState hooks, setTimeout, setInterval, custom hook]
+1: React.Js [with useEffect hooks, useState hooks, setTimeout, setInterval, custom hook]<br/>
+
+
+
+
+
+
+
+![picturehai](https://github.com/abhishek72340/MentalUP-Quiz-App/assets/109124944/a2675575-d7dc-4b5a-8ccf-32952f54c338)
+
+
+![Vite + React - Google Chrome 30_06_2023 17_13_47](https://github.com/abhishek72340/MentalUP-Quiz-App/assets/109124944/aeafb5dd-5c26-4dc1-80a6-8e403bcd040e)
