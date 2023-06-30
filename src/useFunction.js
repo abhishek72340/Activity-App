@@ -12,9 +12,9 @@ export default function useFunction() {
     const [gameEnd, setGameEnd] = useState(false);
     const [count, setCount] = useState(5);
     const [clickCount, setClickCount] = useState(0);
-    const [isPaused, setIsPaused] = useState(false); 
-    const [isLoading, setIsLoading] = useState(true); 
-    
+    const [isPaused, setIsPaused] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
 
 
 
@@ -51,7 +51,7 @@ export default function useFunction() {
 
     //restart the game when time over
     useEffect(() => {
-        if (timer === 0 ) {
+        if (timer === 0) {
             window.location.reload();
         }
     }, [timer]);
@@ -141,14 +141,14 @@ export default function useFunction() {
     }, [])
 
     //loading
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             setIsLoading(false)
-        },2000)
-    },[])
+        }, 2000)
+    }, [])
 
     return {
-       isLoading, pauseTimer, resumeTimer, shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
+        isLoading, pauseTimer, resumeTimer, shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
         , modalIsOpen, setModalIsOpen, gameEnd, setGameEnd, count, setCount, clickCount, setClickCount
     }
 }

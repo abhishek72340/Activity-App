@@ -15,11 +15,11 @@
           "matched": false
         },
         {
-          "src": "course/library/images/farm_animals/cat.PNG",
+          "src": "course/library/images/farm_animals/cat.png",
           "matched": false
         },
         {
-          "src": "course/library/images/farm_animals/camel.PNG",
+          "src": "../src/assets/camel.png",
           "matched": false
         },
         {

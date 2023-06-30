@@ -1,7 +1,6 @@
 import './App.css';
 import SingleCard from './Components/singleCard/SingleCard';
 import useFunction from './useFunction';
-// import  useTimer  from './useTimer';
 import Modal from './Components/modal/Modal'
 import { FaPause } from 'react-icons/fa';
 import refresh from '../src/screenshot/refresh.png';
