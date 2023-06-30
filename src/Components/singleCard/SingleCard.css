@@ -4,9 +4,12 @@
 }
 
 .card img {
-    width: 100%;
     display: block;
-    border: 1px solid white;
+    border: 1px solid #441306;
+    height: 20vmin;
+    width: 20vmin;
+    border-radius: 5px;
+    cursor: pointer;
 
 }
 

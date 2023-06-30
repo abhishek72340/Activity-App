@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import  "./Modal.css";
+
 const Modal = ({ onClose, children }) => {
   return createPortal(
     <>
@@ -14,4 +15,4 @@ const Modal = ({ onClose, children }) => {
   );
 };
 
-export default Modal;
+export default Modal;

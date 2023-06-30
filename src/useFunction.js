@@ -12,6 +12,8 @@ export default function useFunction() {
     const [gameEnd, setGameEnd] = useState(false);
     const [count, setCount] = useState(3);
     const [clickCount, setClickCount] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+
 
 
     const handleChoice = (card) => {
@@ -20,6 +22,9 @@ export default function useFunction() {
 
     const refreshWindow = () => window.location.reload(true);
     const heading = gameStart ? 'Remember the cards' : 'Match the pairs';
+
+    const pauseTimer = () => setIsPaused(true);
+    const resumeTimer = () => setIsPaused(false);
 
     //after complete first quiz go the second quiz
     useEffect(() => {
@@ -32,13 +37,14 @@ export default function useFunction() {
 
     //set time for game
     useEffect(() => {
-        if (!gameStart) {
-            const time = setInterval(() => {
+        if (!gameStart && !isPaused) {
+            const timerId = setInterval(() => {
                 setTimer(prev => prev - 1)
             }, 1000)
-            return () => clearInterval(time);
+            return () => clearInterval(timerId);
         }
-    }, [gameStart]);
+    }, [gameStart, isPaused]);
+
 
 
     //restart the game by over the time
@@ -54,7 +60,7 @@ export default function useFunction() {
         shuffleCards(images)
         setTimeout(() => {
             setGameStart(false)
-        }, 5000)
+        }, 8000)
     }, []);
 
 
@@ -80,7 +86,7 @@ export default function useFunction() {
     useEffect(() => {
         setTimeout(() => {
             setGameStart(false)
-        }, 5000)
+        }, 8000)
     }, [gameEnd])
 
 
@@ -134,7 +140,7 @@ export default function useFunction() {
 
 
     return {
-        shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
+        pauseTimer, resumeTimer, shuffleCards, handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, index, setIndex, cards, setCards, firstChoice, setFirstChoice, secondChoice, setSecondChoice, gameStart, setGameStart, score, setScore, timer, setTimer
         , modalIsOpen, setModalIsOpen, gameEnd, setGameEnd, count, setCount, clickCount, setClickCount
     }
 }

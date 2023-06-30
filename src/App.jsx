@@ -1,29 +1,31 @@
 import './App.css';
 import SingleCard from './Components/singleCard/SingleCard';
-import { FaPause } from 'react-icons/fa';
-import Modal from './Components/modal/Modal'
 import useFunction from './useFunction';
+// import  useTimer  from './useTimer';
+import Modal from './Components/modal/Modal'
+import { FaPause } from 'react-icons/fa';
+import refresh from '../src/screenshot/refresh.png';
+import play from '../src/screenshot/play.png';
 
 export default function App() {
-  const { handleChoice, refreshWindow, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
-    gameStart, setGameStart, score, timer, modalIsOpen, count, clickCount } = useFunction();
+  const {pauseTimer,resumeTimer, handleChoice, refreshWindow,timer, closeModalHandler, openModalHandler, heading, cards, firstChoice, secondChoice,
+    gameStart, setGameStart, score, modalIsOpen, count, clickCount } = useFunction();
+
 
   return (
     <>
       <div id='container'>
         {/* <div id='app'> */}
-        <div id='nav'>
-          <span><FaPause onClick={openModalHandler} /></span>
+        <nav>
+          <span id='pause-icon' onClick={pauseTimer}><FaPause onClick={openModalHandler} /></span>
 
-          <h1>{heading}</h1>
-
-          <div>
-            <span>Score={score}</span>
-            <span>Timer={timer}</span>
+          <div id='score-timer'>
+            <span>Score: {score}</span>
+            <span>Timer: {timer}</span>
           </div>
-
-        </div>
+        </nav>
         <div>
+          <h1 id='heading'>{heading}</h1>
           {
             count > 0 ? <h2 id='count-three-second'>{count}</h2> :
 
@@ -48,12 +50,17 @@ export default function App() {
       </div>
 
       {modalIsOpen && (
-        <Modal onClose={closeModalHandler}>
-          <h2>Memory Card</h2>
-          <p>Remember the cards. Once the cards are flipped over, find the matching cards.</p><br /><br />
+        <Modal onClose={closeModalHandler}  >
+          <div id='modal-container'>
+          <span id='modal-memory-card'>MEMORY CARDS</span>
+          <p>Remember the cards. Once the cards are flipped over, find the matching cards.</p>
           <p>Remember the cards, even if the two cards you've turned are different. This way, you can match the cards more easily on the next move</p>
-          <button onClick={closeModalHandler}>play</button>
-          <button onClick={refreshWindow}>refresh</button>
+
+          <div id='modal-button'>
+          <button onClick={closeModalHandler} id='play-button'><img src={play} alt="play" width='50px' onClick={resumeTimer}/></button>
+          <button onClick={refreshWindow} id='refresh-button'><img src={refresh} alt="refresh" width='50px' /></button>
+          </div>
+          </div>
         </Modal>
       )}
       {/* </div> */}
