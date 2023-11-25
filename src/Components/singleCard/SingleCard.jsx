@@ -24,3 +24,5 @@ export default function SingleCard({ card, handleChoice, flipped, gameStart, set
 
   )
 }
+
+// quiz
